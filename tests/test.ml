@@ -24,7 +24,10 @@ let () = let edges' n = List'.map (fun x -> [x]) (edges n) in
           print_endline (show z)
 
 (* This Just fails completely - no idea what to do *)
+(*
 let () = let edges' (n : int) : int list list = List'.map (fun x -> [x]) (edges n) in
             let pred x = [x = 3] in 
             let z = (dfsMF {Imp.Data.Int} {Imp.Control.List} {Imp.Control.List}  edges' pred 0) in 
               print_endline (show z)
+
+*)
