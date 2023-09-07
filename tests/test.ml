@@ -3,6 +3,7 @@ open Search.Algo;;
 open Imp.Control;;
 open Imp.Data;;
 open Imp.Show;;
+open Imp.Control.Foldable;;
 
 
 
@@ -18,6 +19,8 @@ let edges n = match n with
 let () = let path = dfs {Int} edges (fun n -> n = 3) 0 in 
             print_endline (show path)
 
+
 let () = let edges' n = List'.map (fun x -> [x]) (edges n) in
          let pred x = [x = 3] in 
-         print_endline (show (dfsM {Int} {Imp.Control.List} edges' pred 0))
+         let z = (dfsM  edges' pred 0) in 
+          print_endline (show z)
