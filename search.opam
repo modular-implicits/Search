@@ -1,12 +1,12 @@
 opam-version: "2.0"
 name: "search"
-synopsis: "Experimental Generics library using modular implicits"
+synopsis: "Collection of generic graph search algorithms"
 version: "dev"
 maintainer: "dvlasits@gmail.com"
-authors: ["Daniel Vlasits"]
-homepage: "https://github.com/modular-implicits/Generics"
-dev-repo: "git+https://github.com/modular-implicits/Generics.git"
-bug-reports: "http://github.com/modular-implicits/Generics/issues"
+authors: ["Daniel Vlasits" "Patrick Reader"]
+homepage: "https://github.com/modular-implicits/search"
+dev-repo: "git+https://github.com/modular-implicits/search.git"
+bug-reports: "http://github.com/modular-implicits/search/issues"
 license: "MIT"
 build: [
   ["dune" "subst"] {dev}
@@ -15,8 +15,8 @@ build: [
 ]
 
 depends: [
-   "dune" {build}
-   "ocaml-variants"
-     { = "4.02.1+modular-implicits" | = "4.02.1+modular-implicits-ber" }
-    "imp"
+  "dune" {build}
+  "ocaml-variants"
+    { = "4.02.1+modular-implicits" | = "4.02.1+modular-implicits-ber" }
+  "imp"
 ]
