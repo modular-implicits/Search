@@ -1,5 +1,5 @@
 (library
- (public_name generics)
+ (public_name search)
  (modules Algo)
  (libraries imp)
- (synopsis "Experimental library using modular implicits"))
+ (synopsis "Collection of generic graph-search algorithms"))
