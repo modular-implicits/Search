@@ -20,7 +20,7 @@ let path = dfs {Int} edges (fun n -> n = 3) 0
 Using `dfsM` to return all possible paths:
 
 ```ocaml
-let all_paths = let edges' n = List'.map (fun x -> [x]) (edges n) in
+let all_paths = let edges' n = List.map (fun x -> [x]) (edges n) in
          let pred x = [x = 3] in 
          dfsM  edges' pred 0
 ```
