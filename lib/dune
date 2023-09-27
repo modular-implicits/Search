@@ -1,5 +1,5 @@
 (library
- (public_name search)
+ (public_name searchM)
  (modules Algo)
  (libraries imp dataStructures)
  (synopsis "Collection of generic graph-search algorithms"))

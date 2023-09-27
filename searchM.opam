@@ -1,5 +1,5 @@
 opam-version: "2.0"
-name: "search"
+name: "searchM"
 synopsis: "Collection of generic graph search algorithms"
 version: "dev"
 maintainer: "dvlasits@gmail.com"

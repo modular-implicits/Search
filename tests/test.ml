@@ -1,6 +1,6 @@
 module List' = List;;
-open Search.Algo;;
-open Imp.Control;;
+open SearchM.Algo;;
+open implicit Imp.Control;;
 open Imp.Data;;
 open Imp.Show;;
 

@@ -1,7 +1,7 @@
 open Imp.Control;;
 open Imp.Data;;
 open DataStructures
-open Imp.Control.Foldable
+
 
 
 
@@ -29,7 +29,7 @@ module DFS (O : Ord) (M : Monad) (Set : St.S with type elt = O.t) = struct
 
 end 
 
-let rec dfsM {O : Ord} {M : Monad} (f : O.t -> (O.t list) M.t) (pred : O.t -> bool M.t) (start : O.t) : ((O.t list) option) M.t = let module X = DFS (O) (M) (St.Make{O}) in  X.dfsM f pred start (ref (St.empty {St.Make{O}}))
+let dfsM {O : Ord} {M : Monad} (f : O.t -> (O.t list) M.t) (pred : O.t -> bool M.t) (start : O.t) : ((O.t list) option) M.t = let module X = DFS (O) (M) (St.Make{O}) in  X.dfsM f pred start (ref (St.empty {St.Make{O}}))
 
 let dfs {O : Ord} (f : O.t -> (O.t list)) (pred : O.t -> bool) (start : O.t) : ((O.t list) option) = 
     let f' = fun x -> Identity.return (f x) in
@@ -64,7 +64,7 @@ module DFSF (O : Ord) (M : Monad) (Set : St.S with type elt = O.t) (F : Foldable
                                                                       ))
 end 
 
-let rec dfsMF  : {O : Ord} -> {M : Monad} -> {F : Foldable} -> (O.t -> (O.t F.t) M.t) -> (O.t -> bool M.t) -> (O.t) -> ((O.t list) option) M.t = 
+let dfsMF  : {O : Ord} -> {M : Monad} -> {F : Foldable} -> (O.t -> (O.t F.t) M.t) -> (O.t -> bool M.t) -> (O.t) -> ((O.t list) option) M.t = 
         fun {O : Ord} {M : Monad} {F : Foldable} (f : O.t -> (O.t F.t) M.t) (pred : O.t -> bool M.t) (start : O.t) -> let module X = DFSF (O) (M) (St.Make{O}) (F) in  X.dfsM f pred start (ref (St.empty {St.Make{O}}))
 
 
